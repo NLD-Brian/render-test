@@ -1,16 +1,19 @@
 {
-  "name": "backend",
+  "name": "phonebook",
   "version": "0.0.1",
-  "description": "",
+  "description": "Phonebook backend",
   "license": "MIT",
   "author": "Brian v/d Neut",
+  "type": "commonjs",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "node --watch index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
   },
   "dependencies": {
-    "express": "^5.1.0"
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "morgan": "^1.10.0"
   }
 }

@@ -29,6 +29,7 @@ let notes = [
 app.use(express.json())
 app.use(cors())
 app.use(requestLogger)
+app.use(express.static('dist'))
 
   const generateId = () => {
     const maxId = notes.length > 0

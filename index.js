@@ -84,8 +84,12 @@ app.put('/api/persons/:id', (req, res, next) => {
 })
 //Info about the phonebook
 app.get('/info', (req, res) => {
-    const date = new Date()
-    res.send(`Phonebook has info for ${Person.length} people <br> ${date}`)
+    Person.countDocuments({})
+        .then(count => {
+            const date = new Date()
+            res.send(`Phonebook has info for ${count} people <br> ${date}`)
+        })
+        .catch(error => res.status(500).send({ error: 'Failed to retrieve count' }))
 })
 //Configure the port
 const PORT = process.env.PORT;
